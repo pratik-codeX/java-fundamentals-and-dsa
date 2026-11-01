@@ -1,0 +1,1 @@
+insert into student values(2,'Amit','Pune',70),(3,'Sumit','Nashik',58);
