@@ -1,0 +1,51 @@
+
+
+/*1.Display student name, 
+course name, and course fees.*/
+select name,course,fees
+from student
+INNER JOIN course
+on course = course_name
+;
+
+
+select * from course;
+
+select * from student;
+
+/*INSERT INTO course VALUES
+('Python', 12, 10000),
+('Java', 10, 9500),
+('C++', 8, 8000),
+('Advanced Java', 14, 12000);*/
+
+/*INSERT INTO student VALUES
+(1, 'Raj', 'Pune', 85, 'Python'),
+(2, 'Sneha', 'Mumbai', 90, 'Java'),
+(3, 'Amit', 'Nashik', 78, 'Python'),
+(4, 'Meena', 'Pune', 92, 'C++'),
+(5, 'Rohan', 'Nagpur', 67, 'Java'),
+(6, 'Pooja', 'Pune', 70, 'C++'),
+(7, 'Nikhil', 'Mumbai', 88, 'Python'),
+(8, 'Swati', 'Nagpur', 82, 'Java');
+*/
+/*CREATE TABLE course
+(
+course_name VARCHAR(50) PRIMARY KEY,
+duration INT,
+fees INT
+);
+*/
+
+/*CREATE TABLE student
+(
+rollno INT PRIMARY KEY,
+name VARCHAR(100),
+city VARCHAR(100),
+marks INT,
+course VARCHAR(50)
+);*/
+
+/*use Mrv_Ass2  ;*/
+
+/*create DATABASE Mrv_Ass2;*/
