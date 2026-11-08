@@ -1,26 +1,34 @@
-//5. Accept number from user and check whether number is even or odd.
+//5. Accept on character from user and check whether that character is vowel
+//(a,e,i,o,u) or not.
 import java.util.Scanner;
 
 public class Program5
 {
-    public static boolean CheckEvnOdd(int A)
+    public static boolean CheckVowel(char A)
     {
-        return (A % 2 == 0);
+        if(A == 'a' || A == 'e' || A == 'i' || A == 'o' || A == 'u')
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     public static void main(String[] args) 
     {
         Scanner sobj = new Scanner(System.in);
         System.out.println("Enter Number : ");
         
-        int No = sobj.nextInt();
+        char Ch = sobj.next().charAt(0);
 
-        if(CheckEvnOdd(No))
+        if(CheckVowel(Ch))
         {
-            System.out.println("Even");
-        }        
+            System.out.println("Its Vowel");
+        }
         else
         {
-            System.out.println("Odd");
+            System.out.println("Its not Vowel");
         }
     }
 }
