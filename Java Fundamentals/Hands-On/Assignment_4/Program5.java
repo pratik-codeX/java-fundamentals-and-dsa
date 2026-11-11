@@ -3,9 +3,22 @@ import java.util.Scanner;
 
 public class Program5
 {
-    public static boolean CheckEvnOdd(int A)
+    public static int FactDiff(int No)
     {
-        return (A % 2 == 0);
+        int FactSum = 0,NonFactSum = 0;
+        for(int i = 1; i < No; i++)
+        {
+            if(No % i == 0)
+            {
+                FactSum += i;
+            }
+            else
+            {
+                NonFactSum += i;
+            }
+        }
+
+        return (FactSum - NonFactSum);
     }
     public static void main(String[] args) 
     {
@@ -14,13 +27,6 @@ public class Program5
         
         int No = sobj.nextInt();
 
-        if(CheckEvnOdd(No))
-        {
-            System.out.println("Even");
-        }        
-        else
-        {
-            System.out.println("Odd");
-        }
+        System.out.println("Differenct is : "+FactDiff(No));
     }
 }

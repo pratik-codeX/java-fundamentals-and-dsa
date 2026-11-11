@@ -1,21 +1,21 @@
-//4. Accept two numbers from user and display first number in second
-//number of times.
+//4. Write a program which accept number from user and return summation of all its
+//non factors.
 
 import java.util.Scanner;
 
 public class Program4
 {
-    public static void Display(int A,int Count)
+    public static int SumNonFact(int A)
     {
-        if(Count < 0)
+        int iSum = 0;
+       for(int i = 1;i < A;i++)
         {
-            Count = -Count;
+            if(A % i != 0)
+            {
+                iSum += i;
+            }
         }
-
-        for(int i = 0;i < Count; i++)
-        {
-            System.out.print(A);
-        }
+        return iSum;   
     }
     public static void main(String[] args) 
     {
@@ -23,9 +23,6 @@ public class Program4
         System.out.println("Enter Number : ");
         int No = sobj.nextInt();
 
-        System.out.println("Enter Number : ");
-        int Count = sobj.nextInt();
-
-       Display(No, Count);
+       System.out.println(SumNonFact(No));
     }
 }
