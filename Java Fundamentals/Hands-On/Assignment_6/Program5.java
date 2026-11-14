@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 public class Program5
 {
-    public static float Percentage(int total,int A)
+    public static float Percentage(float num,int total)
     {
-        int Percentage = (total / A) * 100;
+        float Percentage = (total * num)/100;
 
         return Percentage;
     }
     public static void main(String[] args) 
     {
-        System.out.println(Percentage(100,70));
+        System.out.println(Percentage(25, 100));
     }
 }
