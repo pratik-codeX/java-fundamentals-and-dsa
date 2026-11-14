@@ -1,41 +1,35 @@
-//4.Write a program which accept number from user and return multiplication of all
-//digits.
+//4.Write a program to reverse a number.
 
 import java.util.Scanner;
 
+class Logic
+{
+    void reverseNumber(int num)
+    {
+        int rev = 0;
+        int digit = 0;
+
+        while(num != 0)
+        {
+            digit = num % 10;
+
+            System.out.println(digit);
+
+            rev = rev * 10 +  digit;
+
+            num = num / 10;
+        }
+
+        System.out.println(rev);
+    }
+}
+
 public class Program4
 {
-    public static int MultDigits(int No)
+    public static void main(String[] args) 
     {
-        int Mult = 1;
-        int Digit = 0;
-        if(No < 0)
-        {
-            No = -No;
-        }
+        Logic obj = new Logic();
 
-        while(No != 0)
-        {
-            Digit = No % 10;
-
-            if(Digit != 0)
-            {
-                Mult = Mult * Digit;   
-            }
-
-            No = No / 10;
-        }
-
-        return Mult;
-        
-    }    public static void main(String[] args) 
-    {
-        Scanner sobj = new Scanner(System.in);
-        
-        System.out.println("Enter Number : ");        
-        int number = sobj.nextInt();
-
-        System.out.println(MultDigits(number));
-
+        obj.reverseNumber(123);
     }
 }

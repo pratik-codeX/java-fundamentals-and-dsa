@@ -1,39 +1,28 @@
-//Write a program to calculate the sum of rst N natural numbers.
+//Write a program to calculate the sum of first N natural numbers.
 
 import java.util.Scanner;
 
+class Logic
+{
+    void calculateSum(int n)
+    {
+        int sum = 0;
+
+        for(int i = 0; i <= n;i++)
+        {
+            sum = sum + i;
+        }
+        System.out.println(sum);
+    }
+}
+
 public class Program1
 {
-    public static int CountEven(int No)
-    {
-        if(No < 0)
-        {
-            No = -No;
-        }
-        
-        int Cnt = 0;
-        int Digit = 0;
-
-        while(No != 0)
-        {
-            Digit = No % 10;
-
-            if(Digit % 2 == 0)
-            {
-                Cnt++;
-            }
-            //System.out.println(Digit);
-            No = No / 10;
-        }
-        return Cnt;
-    }
+    
     public static void main(String[] args) 
     {
-        Scanner sobj = new Scanner(System.in);
-        
-        System.out.println("Enter Number : ");        
-        int number = sobj.nextInt();
+        Logic lobj = new Logic();
 
-        System.out.println(CountEven(number));
+        lobj.calculateSum(10);
     }
 }

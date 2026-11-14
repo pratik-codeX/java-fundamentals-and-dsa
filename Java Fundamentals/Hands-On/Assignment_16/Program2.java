@@ -1,40 +1,28 @@
-//2.Write a program which accept number from user and return the count of odd
-//digits.
+//2.Write a program to check whether a given number is even or odd.
 
 import java.util.Scanner;
 
+class Logic
+{
+    void checkEvenOdd(int num)
+    {
+        if(num % 2 == 0)
+        {
+            System.out.println("Its Even");
+        }
+        else
+        {
+            System.out.println("Its Odd");
+        }
+    }   
+}
 public class Program2
 {
-    public static int CountOdd(int No)
-    {
-        if(No < 0)
-        {
-            No = -No;
-        }
-        
-        int Cnt = 0;
-        int Digit = 0;
-
-        while(No != 0)
-        {
-            Digit = No % 10;
-
-            if(Digit % 2 != 0)
-            {
-                Cnt++;
-            }
-            //System.out.println(Digit);
-            No = No / 10;
-        }
-        return Cnt;
-    }
+   
     public static void main(String[] args) 
     {
-        Scanner sobj = new Scanner(System.in);
-        
-        System.out.println("Enter Number : ");        
-        int number = sobj.nextInt();
+        Logic obj = new Logic();
 
-        System.out.println(CountOdd(number));
+        obj.checkEvenOdd(11);
     }
 }

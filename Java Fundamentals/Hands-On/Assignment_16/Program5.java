@@ -1,41 +1,30 @@
-//5.Write a program which accept number from user and return difference between
-//summation of even digits and summation of odd digits.
+//5.Write a program to count the number of digits in a given number.
 
 import java.util.Scanner;
 
-public class Program5
+class Logic
 {
-    public static int CountDiff(int No)
+    void countDigits(int num)
     {
-        int SumOdd = 0;
-        int SumEvn = 0;
-        int Digit = 0;
+        int count = 0;
 
-        while(No != 0)
+        while(num != 0)
         {
-            Digit = No % 10;
+            count++;
 
-            if(Digit % 2 == 0)
-            {
-                SumEvn = Digit + SumEvn;
-            }
-            else
-            {
-                SumOdd = Digit + SumOdd;
-            }
-
-            No = No / 10;
+            num = num / 10;
         }
 
-        return SumEvn - SumOdd;
+        System.out.println(count);
     }
+}
+
+public class Program5
+{
     public static void main(String[] args) 
     {
-        Scanner sobj = new Scanner(System.in);
+        Logic obj = new Logic();
 
-        System.out.println("Enter Number : ");    
-        int num = sobj.nextInt();
-        
-       System.out.println(CountDiff(num));
+        obj.countDigits(1234);
     }
 }
