@@ -22,6 +22,7 @@ class Logic
                 if(arr[i] == 0)
                 {
                     System.out.println(digitSum);
+                    digitSum = 0;
                 }
             }
         }
