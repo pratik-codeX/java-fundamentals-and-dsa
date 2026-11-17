@@ -91,10 +91,19 @@ class PaymentService
 
         payments.add(new UpiPayment("UPI101"));
         payments.add(new CardPayment("CARD102"));
+        payments.add(new CardPayment("CARD103"));
+
+        System.out.println("Size of List : "+payments.size());
+        payments.remove(2);
+
+        System.out.println("Size of List : "+payments.size());
 
         for(Payment payment : payments)
-        {
-            System.out.println(payment);
+        {   
+            System.out.println(payment.pay(200));
         }
+
+        System.out.println(payments.get(1));
+        System.out.println("Contains : "+payments.contains(payments.get(0)));
     }
 }
