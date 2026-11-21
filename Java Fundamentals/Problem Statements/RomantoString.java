@@ -56,16 +56,78 @@ s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
 */
-public RomantoString 
+class RomantoString 
 {
-    static int RomantoString(String s)
+    static int getValue(char ch) 
     {
-        
+    // I, V, X, L, C, D, M
+        if(ch == 'I')
+        {
+            return 1;
+        }
+        else if(ch == 'V')
+        {
+            return 5;
+        }
+        else if(ch == 'X')
+        {
+            return 10;
+        }
+        else if(ch == 'L')
+        {
+            return 50;
+        }
+        else if(ch == 'C')
+        {
+            return 100;
+        }
+        else if(ch == 'D')
+        {
+            return 500;
+        }
+        else if(ch == 'M')
+        {
+            return 1000;
+        }
         return 0;
     }
+
+    static int RomantoString(String s)
+    {
+        char c[] = s.toCharArray();
+
+        int num = 0;
+        int currValue = 0;
+        int nextValue = 0;
+
+        for(int i = 0; i < c.length;i++)
+        {
+            currValue = getValue(c[i]);
+            
+            if(i + 1 < c.length)
+            {
+                nextValue = getValue(c[i+1]);
+            }
+            else
+            {
+                nextValue = 0;
+            }
+
+            if(currValue < nextValue)
+            {
+                num = num - currValue;
+            }
+            else
+            {
+                num = num + currValue;
+            }
+        }
+        return num;
+}
     
     public static void main(String A[])
     {
-
+        String s = "MCMXCIV";
+        System.out.println(RomantoString(s));
     }    
 }
