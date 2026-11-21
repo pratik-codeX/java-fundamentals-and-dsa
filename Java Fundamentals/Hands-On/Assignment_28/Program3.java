@@ -11,14 +11,16 @@ class Logic
 {
      void Pattern(int iCol,int iRow)
     {
+        char c = 'A';
         while(iRow != 0)
         {
             int temp = iCol;
             while(temp != 0)
             {
-                System.out.print(" "+temp+" ");
+                System.out.print(c);
                 temp--;
             }
+            c++;
             System.out.println();
             iRow--;
         }

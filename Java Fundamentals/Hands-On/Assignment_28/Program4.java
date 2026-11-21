@@ -10,20 +10,16 @@ class Logic
 {
      void Pattern(int iCol,int iRow)
     {
+        int cnt = 1;
         while(iRow != 0)
         {
             int temp = 1;
             while(temp <= iCol)
             {
-                if(temp % 2 == 0)
-                {
-                    System.out.print("#"+" ");
-                }
-                else
-                {
-                    System.out.print("*"+" ");
-                }
+               
+                System.out.print(cnt);
                 temp++;
+                cnt++;
             }
             System.out.println();
             iRow--;
