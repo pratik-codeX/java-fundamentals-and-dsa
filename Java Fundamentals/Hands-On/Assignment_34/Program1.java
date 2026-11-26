@@ -1,32 +1,37 @@
-/*Write a program which displays ASCII table. Table contains symbol,
-Decimal, Hexadecimal and Octal representation of every member from
-0 to 255.*/
-
-class Logic
-{
-    void DisplayASCII(char ch)
+class Logic {
+    void DisplayASCII() 
     {
-        int Hexadecimal = 0;
-        
-        boolean flag = false;
-       if(ch >= '0' && ch <= '0x')
-       {
-            System.out.println(ch);
-       }
-       
-      
+        // Print table header
+        System.out.printf("%-12s %-10s %-14s %-10s%n", "Symbol", "Decimal", "Hexadecimal", "Octal");
+        System.out.println("--------------------------------------------------");
 
-    }   
+        for (int i = 0; i <= 255; i++) 
+        {
+            String symbol;
 
+            // Handle non-printable control characters so the table stays aligned
+            if (i < 32 || i == 127) 
+            {
+                symbol = "[CTRL]";
+            } 
+            else 
+            {
+                symbol = Character.toString((char) i);
+            }
+
+            String hex = String.format("0x%02X", i);
+            String octal = Integer.toOctalString(i);
+
+            System.out.printf("%-12s %-10d %-14s %-10s%n", symbol, i, hex, octal);
+        }
+    }
 }
 
-public class Program1
+public class Program1 
 {
     public static void main(String[] args) 
     {
         Logic obj = new Logic();
-
-        
-        System.out.println(obj.ChkAlpha('#'));
+        obj.DisplayASCII();
     }
 }
